@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> figmaBanner </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 100%;
+            height: 100vh;
+            background: #7B4CDF;
+            display: flex;
+            justify-content: center;
+            /* 가로중앙 */
+            align-items: center;
+            /* 수직중앙 */
+        }
+
+        div {
+            width: 790px;
+            height: 330px;
+            /* flex-shrink: 0; - 축소안되게하는속성이나 display:flex가 있어야 의미있음 */
+            background: #7B4CDF;
+            position: relative;
+            /* 기준점 */
+
+
+            /* border:1px solid red; */
+        }
+
+        /* 글자 */
+        /* css 에서 띄어쓰기는 후손 > 자식 / 붙여서 쓰는것은 자신  */
+        div .a1 {
+            color: #fff;
+            font-size: 110px;
+            font-weight: 700;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.20);
+            letter-spacing: -3px;
+        }
+
+        /* 러브도넛 */
+        div .a2 img {
+            width: 220px;
+            position: absolute;
+            left: 20px;
+            z-index: 1;
+        }
+
+        /* 컵 */
+        div .a3 img {
+            width: 200px;
+            position: absolute;
+            right: 150px;
+            bottom: 1px;
+            z-index: 3;
+            animation: bounce 2s infinite;
+            /* 2초 동안 계속반복 */
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateX(0);
+            }
+
+            40% {
+                transform: translateX(-20px);
+            }
+
+            60% {
+                transform: translateX(-10px);
+            }
+        }
+
+        /* 도넛 */
+        div .a4 img {
+            width: 150px;
+            position: absolute;
+            right: 150px;
+            top: 45px;
+            z-index: 1;
+            opacity: .7;
+        }
+
+        /* 사람 */
+        div .a5 img {
+            width: 150px;
+            position: absolute;
+            left: 70px;
+            bottom: 30px;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div>
+            <!-- p.a$*5 -->
+            <p class="a1">YEONSU</p>
+            <p class="a2"><img src="./images/love_donut.png" alt="러브도넛"></p>
+            <p class="a3">
+                <a href="https://www.dunkindonuts.co.kr/" target="_blank" >
+                    <img src="./images/cup.png" alt="컵">
+                </a>
+            </p>
+            <p class="a4"><img src="./images/donut.png" alt="도넛"></p>
+            <p class="a5"><img src="./images/person.png" alt="사람"></p>
+        </div>
+    </div>
+</body>
+
+</html>
